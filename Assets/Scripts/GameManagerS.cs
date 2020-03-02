@@ -13,17 +13,19 @@ public class GameManagerS : MonoBehaviour
     public Transform radarCenter;
 
     // config
-    public bool noFailMode = false;
-    public bool totalVisionMode = false;
-    public float shieldRotationSpeed = 1;
-    public float enemySpawnInterval = 3;
-    public float spawnAceleration = 0;
-    public float enemySpeed = 1;
-    public float enemyAcceleration = 0;
+    public Config config;
 
     // aux
     float enemySpawnCounter = 0;
     int killCount = 0;
+    float enemySpawnInterval;
+    public float enemySpeed;
+
+    private void Start()
+    {
+        enemySpawnInterval = config.enemyInitialSpawnInterval;
+        enemySpeed = config.enemyInitialSpeed;
+    }
 
     void Update()
     {
@@ -34,13 +36,13 @@ public class GameManagerS : MonoBehaviour
             Instantiate(enemyPrefab);
         }
 
-        enemySpeed += Time.deltaTime * enemyAcceleration / 100;
-        enemySpawnInterval -= spawnAceleration * Time.deltaTime / 100;
+        enemySpeed += Time.deltaTime * config.enemyAcceleration / 100;
+        enemySpawnInterval -= config.enemySpawnAceleration * Time.deltaTime / 100;
     }
-	
-	public void EnemyDied()
-	{
-		killCount++;
-		textKillCount.text = killCount.ToString();
-	}
+
+    public void EnemyDied()
+    {
+        killCount++;
+        textKillCount.text = killCount.ToString();
+    }
 }

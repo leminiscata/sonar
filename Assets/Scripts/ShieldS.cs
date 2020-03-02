@@ -16,9 +16,9 @@ public class ShieldS : MonoBehaviour
     void Update()
     {
         if (isHoldingCW)
-            shieldBase.Rotate(0, 0, -1 * gm.shieldRotationSpeed);
+            shieldBase.Rotate(0, 0, -1 * gm.config.shieldRotationSpeed);
         else if (isHoldingACW)
-            shieldBase.Rotate(0, 0, 1 * gm.shieldRotationSpeed);
+            shieldBase.Rotate(0, 0, 1 * gm.config.shieldRotationSpeed);
 
         // implementação antiga da movimentação do Shield
         //if (Input.GetKey(KeyCode.UpArrow))

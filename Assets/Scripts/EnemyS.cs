@@ -22,7 +22,7 @@ public class EnemyS : MonoBehaviour
 
     void Update()
     {
-        if (!gm.totalVisionMode && srender.color.a > 0)
+        if (!gm.config.totalVisionMode && srender.color.a > 0)
             SetOpacity(srender.color.a - Time.deltaTime);
         transform.position += (gm.radarCenter.position - transform.position).normalized * gm.enemySpeed * Time.deltaTime / 10;
     }
@@ -47,7 +47,7 @@ public class EnemyS : MonoBehaviour
         }
         if (col.gameObject.name == "Base")
         {
-            if (!gm.noFailMode)
+            if (!gm.config.noFailMode)
                 SceneManager.LoadScene("End");
             Destroy(gameObject);
         }
@@ -55,7 +55,7 @@ public class EnemyS : MonoBehaviour
 
     void SetOpacity(float opacity)
     {
-        if (gm.totalVisionMode)
+        if (gm.config.totalVisionMode)
             opacity = 1;
         Color c = srender.color;
         c.a = opacity;

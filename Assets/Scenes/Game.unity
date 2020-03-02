@@ -1000,15 +1000,10 @@ MonoBehaviour:
   sfxSonar: {fileID: 8300000, guid: 3e70cb3ab4f8c4b4881117a6b89cd27b, type: 3}
   sfxShieldHit: {fileID: 8300000, guid: 49627e1ddabbb6844b38b852b7fac484, type: 3}
   sfxBaseHit: {fileID: 8300000, guid: ebcb10e380031bc4290612934d8a74ab, type: 3}
-  noFailMode: 0
-  totalVisionMode: 0
-  enemySpawnInterval: 3
-  spawnAceleration: 1
-  enemySpeed: 3
-  enemyAcceleration: 0
   aSource: {fileID: 0}
   textKillCount: {fileID: 1756168040}
   radarCenter: {fileID: 54577858}
+  config: {fileID: 11400000, guid: 1faf234b0d58a6940b8f1d7acbab8b60, type: 2}
 --- !u!4 &1386747952
 Transform:
   m_ObjectHideFlags: 0
