@@ -7,13 +7,9 @@ using UnityEngine.EventSystems; // This is so that you can extend the pointer ha
 
 
 public class EnemyS : MonoBehaviour
-
 {
     SpriteRenderer srender;
     GameManagerS gm;
-
-
-
 
     void Start()
     {
@@ -21,7 +17,7 @@ public class EnemyS : MonoBehaviour
         srender = GetComponent<SpriteRenderer>();
         SetOpacity(0);
         var angle = Random.Range(0, 360);
-        transform.position = gm.radarCenter.position + new Vector3(Mathf.Sin(Mathf.Deg2Rad * angle), Mathf.Cos(Mathf.Deg2Rad * angle))* 3.2f;
+        transform.position = gm.radarCenter.position + new Vector3(Mathf.Sin(Mathf.Deg2Rad * angle), Mathf.Cos(Mathf.Deg2Rad * angle)) * 3.2f;
     }
 
     void Update()
@@ -47,7 +43,7 @@ public class EnemyS : MonoBehaviour
         {
             PlaySFX(gm.sfxShieldHit);
             Destroy(gameObject);
-			gm.EnemyDied();
+            gm.EnemyDied();
         }
         if (col.gameObject.name == "Base")
         {
